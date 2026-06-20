@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-HK" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clshk.com | Minimalist Digital Solutions</title>
+    
+    <!-- Google Fonts: Inter & Noto Sans TC for clean, modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Custom Configuration for Muji Style -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        muji: {
+                            bg: '#F9F6F0',      // 微乳白/米白背景
+                            card: '#FBFBFA',    // 卡片背景，極微弱的層次差異
+                            text: '#2D2D2D',    // 深炭灰，取代純黑
+                            muted: '#7A7A7A',   // 柔和暖灰
+                            border: '#E6E4E0',  // 極細緻的 1px 邊框
+                            accent: '#8A9A5B',  // 抹茶綠點綴 (極度克制使用)
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '"Noto Sans TC"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* 微調全域樣式，增強日系排版質感 */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: 0.02em; /* 微調加寬字距 */
+        }
+        p {
+            line-height: 1.8; /* 舒適的行高 */
+        }
+        /* 隱藏滾動條但保持滾動功能 (可選) */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E6E4E0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-muji-bg text-muji-text font-sans selection:bg-muji-accent selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header (導航欄) -->
+    <header class="fixed top-0 w-full bg-muji-bg/80 backdrop-blur-md z-50 border-b border-muji-border/50 transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-xl font-medium tracking-widest text-muji-text hover:opacity-70 transition-opacity duration-300">
+                clshk.com
+            </a>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center space-x-10 text-sm font-light">
+                <a href="#portfolio" class="text-muji-text hover:text-muji-muted transition-colors duration-300">作品集</a>
+                <a href="#about" class="text-muji-text hover:text-muji-muted transition-colors duration-300">關於我</a>
+                <a href="#contact" class="text-muji-text hover:text-muji-muted transition-colors duration-300">聯絡</a>
+                
+                <!-- 語系切換圖標 -->
+                <button class="text-muji-muted hover:text-muji-text transition-colors duration-300 ml-4 focus:outline-none" aria-label="切換語言">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Button (極簡風格) -->
+            <button class="md:hidden text-muji-text focus:outline-none" aria-label="打開選單">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+        
+        <!-- Hero Section (主視覺區) -->
+        <section id="about" class="max-w-5xl mx-auto px-6 min-h-[60vh] flex flex-col justify-center py-20">
+            <div class="max-w-3xl">
+                <h1 class="text-3xl md:text-5xl font-light tracking-wide leading-[1.4] mb-8 text-muji-text">
+                    Crafting minimalist <br class="hidden md:block" />
+                    digital solutions from Hong Kong.
+                </h1>
+                <p class="text-lg md:text-xl text-muji-muted font-light tracking-wide max-w-2xl">
+                    專注於全棧開發與移動端應用設計，<br class="hidden md:block" />
+                    將複雜的邏輯轉化為極簡的用戶體驗。
+                </p>
+            </div>
+        </section>
+
+        <!-- Portfolio Section (作品展示區) -->
+        <section id="portfolio" class="max-w-5xl mx-auto px-6 py-20">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-sm tracking-widest text-muji-muted uppercase">Selected Works</h2>
+                <div class="h-[1px] bg-muji-border flex-grow ml-6"></div>
+            </div>
+
+            <!-- 網格佈局 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card A -->
+                <article class="group bg-muji-card border border-muji-border rounded-md p-5 hover:shadow-soft transition-all duration-500 flex flex-col h-full relative overflow-hidden">
+                    <!-- 裝飾性微弱色塊 (Hover 效果) -->
+                    <div class="absolute inset-0 bg-muji-bg opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none"></div>
+                    
+                    <!-- 圖片佔位符 -->
+                    <div class="relative w-full aspect-[4/3] bg-muji-bg border border-muji-border/50 rounded flex flex-col items-center justify-center mb-6 overflow-hidden">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-muji-muted/40 group-hover:scale-110 transition-transform duration-700 ease-out"></i>
+                        <span class="mt-3 text-xs text-muji-muted/50 tracking-widest uppercase">Mockup</span>
+                    </div>
+                    
+                    <!-- 內容 -->
+                    <div class="flex-grow relative z-10">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-base font-medium text-muji-text group-hover:text-muji-accent transition-colors duration-300">iOS 智能輔助工具 App</h3>
+                            <a href="#" class="text-muji-muted hover:text-muji-text transition-colors" aria-label="View on App Store">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <p class="text-sm text-muji-muted font-light mb-6">專為特定領域打造，提供乾淨無干擾的操作界面，提升日常任務處理效率。</p>
+                    </div>
+                    
+                    <!-- 底部連結 -->
+                    <div class="pt-4 border-t border-muji-border/40 flex items-center space-x-4 relative z-10">
+                        <a href="#" class="text-[11px] text-muji-muted hover:text-muji-text transition-colors">使用條款 (Terms)</a>
+                        <span class="text-muji-border/50 text-[10px]">|</span>
+                        <a href="#" class="text-[11px] text-muji-muted hover:text-muji-text transition-colors">隱私政策 (Privacy Policy)</a>
+                    </div>
+                </article>
+
+                <!-- Card B -->
+                <article class="group bg-muji-card border border-muji-border rounded-md p-5 hover:shadow-soft transition-all duration-500 flex flex-col h-full relative overflow-hidden">
+                    <div class="absolute inset-0 bg-muji-bg opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none"></div>
+                    <div class="relative w-full aspect-[4/3] bg-muji-bg border border-muji-border/50 rounded flex flex-col items-center justify-center mb-6 overflow-hidden">
+                        <i data-lucide="bus" class="w-8 h-8 text-muji-muted/40 group-hover:scale-110 transition-transform duration-700 ease-out"></i>
+                        <span class="mt-3 text-xs text-muji-muted/50 tracking-widest uppercase">Mockup</span>
+                    </div>
+                    <div class="flex-grow relative z-10">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-base font-medium text-muji-text group-hover:text-muji-accent transition-colors duration-300">大眾運輸資訊查詢工具 App</h3>
+                            <a href="#" class="text-muji-muted hover:text-muji-text transition-colors" aria-label="View Project">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <p class="text-sm text-muji-muted font-light mb-6">專為香港在地設計，整合多種交通數據，提供極簡且精確的到站時間預測。</p>
+                    </div>
+                    <div class="pt-4 border-t border-muji-border/40 flex items-center space-x-4 relative z-10">
+                        <a href="#" class="text-[11px] text-muji-muted hover:text-muji-text transition-colors">使用條款 (Terms)</a>
+                        <span class="text-muji-border/50 text-[10px]">|</span>
+                        <a href="#" class="text-[11px] text-muji-muted hover:text-muji-text transition-colors">隱私政策 (Privacy Policy)</a>
+                    </div>
+                </article>
+
+                <!-- Card C -->
+                <article class="group bg-muji-card border border-muji-border rounded-md p-5 hover:shadow-soft transition-all duration-500 flex flex-col h-full relative overflow-hidden">
+                    <div class="absolute inset-0 bg-muji-bg opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none"></div>
+                    <div class="relative w-full aspect-[4/3] bg-muji-bg border border-muji-border/50 rounded flex flex-col items-center justify-center mb-6 overflow-hidden">
+                        <i data-lucide="utensils" class="w-8 h-8 text-muji-muted/40 group-hover:scale-110 transition-transform duration-700 ease-out"></i>
+                        <span class="mt-3 text-xs text-muji-muted/50 tracking-widest uppercase">Mockup</span>
+                    </div>
+                    <div class="flex-grow relative z-10">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-base font-medium text-muji-text group-hover:text-muji-accent transition-colors duration-300">全棧網上訂餐系統</h3>
+                            <a href="#" class="text-muji-muted hover:text-muji-text transition-colors" aria-label="View Project">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <p class="text-sm text-muji-muted font-light mb-6">為機構量身定制 (Tailor-made Meal Ordering System)，從前台點餐到後台管理無縫整合。</p>
+                    </div>
+                    <div class="pt-4 border-t border-muji-border/40 flex items-center space-x-4 relative z-10">
+                        <a href="#" class="text-[11px] text-muji-muted hover:text-muji-text transition-colors">使用條款 (Terms)</a>
+                        <span class="text-muji-border/50 text-[10px]">|</span>
+                        <a href="#" class="text-[11px] text-muji-muted hover:text-muji-text transition-colors">隱私政策 (Privacy Policy)</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (頁腳) -->
+    <footer id="contact" class="mt-20 border-t border-muji-border bg-muji-card py-8 relative">
+        <div class="max-w-5xl mx-auto px-6 flex items-center justify-center relative">
+            
+            <p class="text-xs text-muji-muted tracking-wide font-light">
+                &copy; 2026 clshk.com. All rights reserved.
+            </p>
+
+            <!-- 隱藏彩蛋：極其隱蔽的觸發器 (透明度極低，放在右下角) -->
+            <button id="easter-egg" class="absolute right-6 opacity-10 hover:opacity-30 text-[10px] cursor-pointer text-muji-muted transition-opacity duration-500 focus:outline-none" aria-hidden="true">
+                cls
+            </button>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 初始化 Lucide Icons
+        lucide.createIcons();
+
+        // 彩蛋邏輯：呼應 clshk 網址的雙關含義
+        document.getElementById('easter-egg').addEventListener('click', function() {
+            console.log('%c CLS! 點解你咁叻搵到呢個彩蛋㗎！😎 ', 'background: #2D2D2D; color: #F9F6F0; font-size: 14px; padding: 10px; border-radius: 4px;');
+            
+            // 可選的視覺反饋：按鈕短暫變亮
+            this.style.opacity = '0.8';
+            this.style.color = '#8A9A5B'; // 變成抹茶綠
+            setTimeout(() => {
+                this.style.opacity = '';
+                this.style.color = '';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
